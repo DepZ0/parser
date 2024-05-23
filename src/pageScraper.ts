@@ -31,7 +31,8 @@ export const scraperObject = {
         const nameElement = catalog.querySelector(".hover h3 a") as HTMLAnchorElement | null;
         const name = nameElement ? (nameElement.textContent ?? "").trim() : "";
 
-        const link = nameElement ? nameElement.href : "";
+        const pdfElement = catalog.querySelector("a.pdf") as HTMLAnchorElement | null;
+        const link = pdfElement ? pdfElement.href : "";
 
         const dateElements = Array.from(catalog.querySelectorAll("time"));
         const dates = dateElements.map((dateElement) => (dateElement.textContent ?? "").trim()).join(" - ");
